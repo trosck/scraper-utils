@@ -5,7 +5,8 @@ describe('date', () => {
   const testDate = (date, time, type = 'short') => it(
     `should parse ${date}`,
     () => assert.equal(
-      parseRuDate(date, type)?.getTime(), time
+      parseRuDate(date, type)?.getTime(),
+      new Date(time).getTime()
     )
   )
 
