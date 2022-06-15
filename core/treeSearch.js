@@ -3,7 +3,8 @@
  *
  * @param tree дерево для поиска
  * @param childKey свойство нод
- * @param verifyFunction функция принимающая ноду и возврающая true/false
+ * @param verifyFunction функция принимающая ноду
+ * и возврающая true/false для определения нужной
  * @returns {Object|null}
  */
 export default (tree, childKey, verifyFunction) => {
