@@ -18,4 +18,3 @@ describe('clearHtml', () => {
     assert.equal(clearHtml(example), clearText)
   })
 })
-
