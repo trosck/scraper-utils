@@ -1,0 +1,31 @@
+{
+  "name": "scrapper-utils",
+  "version": "0.1.0",
+  "description": "helpful tools for process text",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trosck/scrapper-utils.git"
+  },
+  "keywords": [
+    "process",
+    "text",
+    "scrapping"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trosck/scrapper-utils/issues"
+  },
+  "homepage": "https://github.com/trosck/scrapper-utils#readme",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
