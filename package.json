@@ -2,14 +2,11 @@
   "name": "@trosckey/scraper-utils",
   "version": "0.2.2",
   "description": "helpful tools for process text",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "files": [
-    "./dist/*"
+    "dist"
   ],
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "NODE_OPTIONS='--experimental-specifier-resolution=node --loader ts-node/esm' mocha -r ts-node/register 'test/*.test.ts' --delay",
     "build": "tsc"
