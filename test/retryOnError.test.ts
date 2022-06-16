@@ -1,8 +1,8 @@
 import assert from 'assert'
-import retryOnError from '../dist/core/retryOnError.js'
+import retryOnError from '../core/retryOnError'
 
 ;(async () => {
-  const testRetry = async (tryCount, limit = tryCount) => {
+  const testRetry = async (tryCount: number, limit = tryCount) => {
     let _count = 0
     await retryOnError(
       () => {

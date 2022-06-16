@@ -1,7 +1,12 @@
 import assert from 'assert'
-import treeSearch from '../dist/core/treeSearch.js'
+import treeSearch from '../core/treeSearch'
 
-const tree = {
+type TreeNodeType = {
+  id: number,
+  children?: TreeNodeType[]
+}
+
+const tree: TreeNodeType = {
   id: 1,
   children: [
     { id: 2 },
@@ -33,13 +38,13 @@ const tree = {
 }
 
 describe('treeSearch', () => {
-  const testSearch = id => it(
+  const testSearch = (id: number) => it(
     `should find node with id ${id}`,
     () => {
       const result = treeSearch(
         tree,
         'children',
-        node => node?.id === id
+        (node: TreeNodeType) => node?.id === id
       )
 
       assert.equal(result?.id, id)

@@ -1,5 +1,5 @@
 import assert from 'assert'
-import sliceTextByWords from '../dist/core/sliceTextByWords.js'
+import sliceTextByWords from '../core/sliceTextByWords'
 
 const example = `
 The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.

@@ -1,5 +1,5 @@
 import assert from 'assert'
-import clearHtml from '../dist/core/clearHtml.js'
+import clearHtml from '../core/clearHtml'
 
 const example = `
 <body>
