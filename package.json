@@ -1,9 +1,13 @@
 {
   "name": "@trosckey/scrapper-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "helpful tools for process text",
   "main": "index.js",
   "type": "module",
+  "files": [
+    "index.js",
+    "core/*"
+  ],
   "directories": {
     "test": "test"
   },
