@@ -1,5 +1,5 @@
 {
-  "name": "scrapper-utils",
+  "name": "@trosckey/scrapper-utils",
   "version": "0.1.0",
   "description": "helpful tools for process text",
   "main": "index.js",
