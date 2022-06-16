@@ -7,9 +7,7 @@ helpful tools for process text
 
 ![](https://img.shields.io/npm/v/@trosckey/scraper-utils.svg?logo=npm)
 ![](https://img.shields.io/github/languages/code-size/trosck/scraper-utils)
-![](https://img.shields.io/bundlephobia/minzip/@trosckey/scraper-utils)
-![](https://img.shields.io/npm/l/@trosckey/scraper-utils)   
-![](https://img.shields.io/npm/dt/@trosckey/scraper-utils)
+![](https://img.shields.io/npm/l/@trosckey/scraper-utils)
 ![](https://img.shields.io/github/last-commit/trosck/scraper-utils/main)
 
 
