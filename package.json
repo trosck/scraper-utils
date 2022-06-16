@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/trosck/scrapper-utils#readme",
   "devDependencies": {
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.3"
   }
 }
