@@ -2,6 +2,8 @@
 
 helpful tools for process text
 
+[![npm publish](https://github.com/trosck/scraper-utils/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/trosck/scraper-utils/actions/workflows/npm-publish.yml)
+
 ## Utils
 - [clearHtml](#clearhtml)
 - [date](#date)
