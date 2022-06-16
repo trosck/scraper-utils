@@ -1,8 +1,12 @@
 import assert from 'assert'
-import { parseRuDate } from '../dist/core/date.js'
+import { parseRuDate } from '../core/date'
 
 describe('date', () => {
-  const testDate = (date, time, type = 'short') => it(
+  const testDate = (
+    date: string,
+    time: string,
+    type: 'short' | 'long' = 'short'
+  ) => it(
     `should parse ${date}`,
     () => assert.equal(
       parseRuDate(date, type)?.getTime(),
