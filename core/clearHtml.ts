@@ -3,7 +3,7 @@
  * @param string
  * @returns {string}
  */
-export default string => string
+export default (string: string) => string
   // tags
   ?.replace(/(<([^>]+)>)/g, '')
   // codes

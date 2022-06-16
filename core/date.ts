@@ -8,13 +8,13 @@ const ruMonthsLong = ['января', 'февраля', 'марта', 'апре�
  * @param {short|long} type формат месяца
  * @returns {Date|null}
  */
-export const parseRuDate = (str, type = 'short') => {
+export const parseRuDate = (str: string, type: 'short' | 'long' = 'short') => {
   try {
     const date = str.match(
       /(?<day>\d{1,2})\s+(?<month>[а-я]+)\s+(?<year>\d{1,4})/i
     )
 
-    if (!date) return null
+    if (!date?.groups) return null
 
     const { groups: { day, month, year } } = date
 

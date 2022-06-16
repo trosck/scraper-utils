@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { parseRuDate } from '../core/date.js'
+import { parseRuDate } from '../dist/core/date.js'
 
 describe('date', () => {
   const testDate = (date, time, type = 'short') => it(

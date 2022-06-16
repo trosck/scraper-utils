@@ -7,16 +7,22 @@
  * и возврающая true/false для определения нужной
  * @returns {Object|null}
  */
-export default (tree, childKey, verifyFunction) => {
+export default <TreeNodeType = { [key: string]: any }>(
+  tree: TreeNodeType,
+  childKey: keyof TreeNodeType,
+  verifyFunction: Function
+) => {
 
-  return (function search(element) {
+  return (function search(element: TreeNodeType): TreeNodeType | null {
 
     if (verifyFunction(element)) {
       return element
     } else if (element?.[childKey]) {
       let result = null
-      for (let i = 0; result == null && i <= element[childKey].length; i++) {
-        result = search(element[childKey][i])
+      // @ts-ignore
+      const children = element[childKey] as TreeNodeType[]
+      for (let i = 0; result == null && i <= children.length; i++) {
+        result = search(children[i])
       }
       return result;
     }
