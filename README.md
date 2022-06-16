@@ -23,11 +23,13 @@ clearHtml('<div>Hello, &#61;World!\n</div>') // "Hello, World!"
 parsing date formats, returns `Date` object   
 or `null` if cannot parse date   
 
-first argument - date string, second - month   
-format(`short` for `ноя`, `long` for `ноября`),   
-default is `short`
-
 ### parseRuDate
+arguments
+1) date string
+2) month format
+    - `short` - `ноя`
+    - `long` - `ноября`
+    - default `short`
 ```javascript
 import { parseRuDate } from '@trosckey/scrapper-utils'
 parseRuDate('01 ноя 2020').toDateString() // "Sun Nov 01 2020"
@@ -43,9 +45,9 @@ removeDoubleSpaces('Hello    ,     World    !   ') // 'Hello , World ! '
 
 ## retryOnError
 arguments:
-- function for execute
-- count of tries
-- error handler(optional)
+1) function for execute
+2) count of tries
+3) error handler(optional)
 
 executing function need return `truthy`   
 value for stop cycle
