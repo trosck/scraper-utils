@@ -11,7 +11,8 @@ helpful tools for process text
 ![](https://img.shields.io/github/last-commit/trosck/scraper-utils/main)
 
 
-## Utils
+## Table of contents
+- [Installation](#installation)
 - [clearHtml](#clearhtml)
 - [date](#date)
   - [parseRuDate](#parserudate)
@@ -20,6 +21,18 @@ helpful tools for process text
 - [sleep](#sleep)
 - [sliceTextByWords](#slicetextbywords)
 - [treeSearch](#treesearch)
+
+## Installation
+
+using `npm`
+```bash
+npm i @trosckey/scraper-utils
+```
+
+using `yarn`
+```bash
+yarn add @trosckey/scraper-utils
+```
 
 ## clearHtml
 removes html tags, codes and line breaks(\n, \t, etc)
