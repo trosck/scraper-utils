@@ -6,7 +6,11 @@
  * @param {*} onError 
  * @returns
  */
-export default async (func, tryCount, onError = () => {}) => {
+export default async (
+  func: Function,
+  tryCount: number,
+  onError: (error: any) => void = () => {}
+) => {
   let currentTry = -1
   while(++currentTry < tryCount) {
     try {

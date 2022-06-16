@@ -13,7 +13,7 @@
  * а значением обрезанный текст. описание доступно
  * (если оно есть) по специальному ключу description
  */
-export default (text, reserved) => ['']
+export default (text: string, reserved: string[]) => ['']
   .concat(reserved)
   .map(
     word => ({ word, index: text.indexOf(word) })
@@ -24,7 +24,12 @@ export default (text, reserved) => ['']
   .sort(
     (a, b) => a.index - b.index
   )
-  .reduce((store, { word, index }, itemIndex, wordsArray) => {
+  .reduce((
+    store: { [key: string]: string },
+    { word, index },
+    itemIndex,
+    wordsArray
+  ) => {
 
     const endIndex = wordsArray[itemIndex + 1]?.index || text.length
     const value = text.slice(index, endIndex).replace(word, '')
