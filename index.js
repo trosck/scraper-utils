@@ -1,4 +1,4 @@
-export * as date from './core/date'
+export { parseRuDate } from './core/date'
 export { default as sleep } from './core/sleep'
 export { default as clearHtml } from './core/clearHtml'
 export { default as treeSearch } from './core/treeSearch'
