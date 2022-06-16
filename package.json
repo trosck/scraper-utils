@@ -5,14 +5,14 @@
   "main": "index.js",
   "type": "module",
   "files": [
-    "index.js",
-    "core/*"
+    "./dist/*"
   ],
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --delay"
+    "test": "tsc && mocha --delay",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
