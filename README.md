@@ -46,16 +46,11 @@ parsing date formats, returns `Date` object
 or `null` if cannot parse date   
 
 ### parseRuDate
-arguments
-1) date string
-2) month format
-    - `short` - `ноя`
-    - `long` - `ноября`
-    - default `short`
+parse ru date format
 ```javascript
 import { parseRuDate } from '@trosckey/scrapper-utils'
 parseRuDate('01 ноя 2020').toDateString() // "Sun Nov 01 2020"
-parseRuDate('28 Декабря 2016', 'long').toDateString() // "Wed Dec 28 2016"
+parseRuDate('28 Декабря 2016').toDateString() // "Wed Dec 28 2016"
 ```
 
 ## removeDoubleSpaces
