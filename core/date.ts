@@ -1,5 +1,7 @@
-const ruMonthsShort = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
-const ruMonthsLong = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+const monthFormats = Object.assign(Object.create(null), {
+  short: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+  long: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+})
 
 /**
  * Получение даты из строки в ру формате
@@ -8,7 +10,7 @@ const ruMonthsLong = ['января', 'февраля', 'марта', 'апре�
  * @param {short|long} type формат месяца
  * @returns {Date|null}
  */
-export const parseRuDate = (str: string, type: 'short' | 'long' = 'short') => {
+export const parseRuDate = (str: string) => {
   try {
     const date = str.match(
       /(?<day>\d{1,2})\s+(?<month>[а-я]+)\s+(?<year>\d{1,4})/i
@@ -18,7 +20,9 @@ export const parseRuDate = (str: string, type: 'short' | 'long' = 'short') => {
 
     const { groups: { day, month, year } } = date
 
-    const monthsArray = type === 'short' ? ruMonthsShort : ruMonthsLong
+    const monthsArray = month.length === 3
+      ? monthFormats.short
+      : monthFormats.long
 
     return new Date(
       +year,
