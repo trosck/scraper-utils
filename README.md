@@ -1,6 +1,6 @@
 # scrapper-utils
 
-(WIP) helpful tools for process text
+helpful tools for process text
 
 ## Utils
 - [clearHtml](#clearhtml)
