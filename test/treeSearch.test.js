@@ -1,5 +1,5 @@
 import assert from 'assert'
-import treeSearch from '../core/treeSearch.js'
+import treeSearch from '../dist/core/treeSearch.js'
 
 const tree = {
   id: 1,

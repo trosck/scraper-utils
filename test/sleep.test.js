@@ -1,5 +1,5 @@
 import assert from 'assert'
-import sleep from '../core/sleep.js'
+import sleep from '../dist/core/sleep.js'
 
 const sleepTime = 1000
 
