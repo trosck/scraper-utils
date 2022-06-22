@@ -1,6 +1,6 @@
 {
   "name": "@trosckey/scraper-utils",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "helpful tools for process text",
   "main": "dist/index.js",
   "type": "module",
