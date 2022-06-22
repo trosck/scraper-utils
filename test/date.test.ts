@@ -4,8 +4,7 @@ import { parseRuDate } from '../core/date'
 describe('date', () => {
   const testDate = (
     date: string,
-    time: string,
-    type: 'short' | 'long' = 'short'
+    time: string
   ) => it(
     `should parse ${date}`,
     () => assert.equal(
