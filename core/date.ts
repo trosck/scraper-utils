@@ -23,8 +23,8 @@ export const parseRuDate = (str: string): Date | null => {
       ? monthFormats.short
       : monthFormats.long
 
-    const monthIndex = monthsArray.indexOf(month.toLowerCase())
-    return new Date(`${year}-${monthIndex + 1}-${day}T00:00:00.000Z`)
+    const monthNumber = monthsArray.indexOf(month.toLowerCase()) + 1
+    return new Date(`${year}-${monthNumber < 10 && '0' || ''}${monthNumber}-${day}T00:00:00.000Z`)
   } catch(e) {
     return null
   }
