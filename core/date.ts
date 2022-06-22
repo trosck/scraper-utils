@@ -7,10 +7,9 @@ const monthFormats = Object.assign(Object.create(null), {
  * Получение даты из строки в ру формате
  *
  * @param {String} str дата формата "DD MM YYYY"
- * @param {short|long} type формат месяца
  * @returns {Date|null}
  */
-export const parseRuDate = (str: string) => {
+export const parseRuDate = (str: string): Date | null => {
   try {
     const date = str.match(
       /(?<day>\d{1,2})\s+(?<month>[а-я]+)\s+(?<year>\d{1,4})/i
@@ -24,11 +23,8 @@ export const parseRuDate = (str: string) => {
       ? monthFormats.short
       : monthFormats.long
 
-    return new Date(
-      +year,
-      monthsArray.indexOf(month.toLowerCase()),
-      +day
-    )
+    const monthIndex = monthsArray.indexOf(month.toLowerCase())
+    return new Date(`${year}-${monthIndex + 1}-${day}T00:00:00.000Z`)
   } catch(e) {
     return null
   }
