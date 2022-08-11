@@ -66,21 +66,20 @@ arguments:
 2) count of tries
 3) error handler(optional)
 
-executing function need return `truthy`   
-value for stop cycle
+returns promise with resolving value
 
 ```javascript
 import { retryOnError } from '@trosckey/scrapper-utils'
-retryOnError(
+const data = await retryOnError(
   async () => {
-    await fetch('https://example.com/')
-    return true
+    const response = await fetch('https://example.com/')
+    return response.text()
   },
   5,
-  async error => {
-    console.error(error)
-  }
+  console.error
 )
+
+console.log(data) // '<!doctype html><html><head>...'
 ```
 
 ## sleep
