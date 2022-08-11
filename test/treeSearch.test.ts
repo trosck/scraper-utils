@@ -1,4 +1,3 @@
-import assert from 'assert'
 import treeSearch from '../core/treeSearch'
 
 type TreeNodeType = {
@@ -47,7 +46,7 @@ describe('treeSearch', () => {
         (node: TreeNodeType) => node?.id === id
       )
 
-      assert.equal(result?.id, id)
+      expect(result?.id).toBe(id)
     }
   )
 

@@ -1,4 +1,3 @@
-import assert from 'assert'
 import sliceTextByWords from '../core/sliceTextByWords'
 
 const example = `
@@ -30,6 +29,6 @@ const result = {
 
 describe('sliceTextByWords', () => {
   it('should slice text by words', () => {
-    assert.deepEqual(sliceTextByWords(example, keywords), result)
+    expect(JSON.stringify(sliceTextByWords(example, keywords))).toBe(JSON.stringify(result))
   })
 })

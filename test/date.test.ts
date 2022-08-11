@@ -1,4 +1,3 @@
-import assert from 'assert'
 import { parseRuDate } from '../core/date'
 
 describe('date', () => {
@@ -7,8 +6,9 @@ describe('date', () => {
     time: string
   ) => it(
     `should parse ${ruDate}`,
-    () => assert.equal(
-      parseRuDate(ruDate)?.getTime(),
+    () => expect(
+      parseRuDate(ruDate)?.getTime()
+    ).toBe(
       new Date(time).getTime()
     )
   )
