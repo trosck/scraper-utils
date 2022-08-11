@@ -1,4 +1,3 @@
-import assert from 'assert'
 import clearHtml from '../core/clearHtml'
 
 const example = `
@@ -15,6 +14,6 @@ const clearText = '      Example Domain    This domain is for use in illustrativ
 
 describe('clearHtml', () => {
   it('should clean text from html', () => {
-    assert.equal(clearHtml(example), clearText)
+    expect(clearHtml(example)).toBe(clearText)
   })
 })
