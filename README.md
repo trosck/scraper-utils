@@ -83,8 +83,7 @@ console.log(data) // '<!doctype html><html><head>...'
 ```
 
 ## sleep
-simple sleep function, accepts number   
-(milliseconds) to sleep
+simple sleep function, takes a number (milliseconds)
 ```javascript
 import { sleep } from '@trosckey/scrapper-utils'
 await sleep(5000)
