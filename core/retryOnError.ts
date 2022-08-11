@@ -11,16 +11,13 @@ export default async (
   tryCount: number,
   onError: (error: any) => void = () => {}
 ) => {
-  let currentTry = -1
-  while(++currentTry < tryCount) {
+  let currentTry = 0
+  while(currentTry++ < tryCount) {
     try {
-      const isEnd = await func()
-      if (isEnd) return
-
-      currentTry = -1
+      const result = await func()
+      return result
     } catch(e) {
-      // last try
-      if (currentTry + 1 === tryCount) {
+      if (currentTry === tryCount) {
         return await onError(e)
       }
     }
