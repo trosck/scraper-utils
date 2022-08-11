@@ -1,6 +1,6 @@
 # scraper-utils
 
-helpful tools for process text
+helpful tools for scraping
 
 [![ci](https://github.com/trosck/scraper-utils/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/trosck/scraper-utils/actions/workflows/ci.yml)
 [![npm publish](https://github.com/trosck/scraper-utils/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/trosck/scraper-utils/actions/workflows/npm-publish.yml)
