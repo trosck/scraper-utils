@@ -1,37 +1,29 @@
-import assert from 'assert'
 import retryOnError from '../core/retryOnError'
 
-;(async () => {
-  const testRetry = async (tryCount: number, limit = tryCount) => {
-    let _count = 0
-    await retryOnError(
-      () => {
-        _count++
-        if (_count === limit) {
-          return true
-        }
+const testRetry = async (tryCount: number, limit = tryCount) => {
+  let _count = 0
+  await retryOnError(
+    () => {
+      _count++
+      if (_count === limit) {
+        return true
+      }
 
-        throw new Error()
-      },
-      tryCount
-    )
-    return _count
-  }
+      throw new Error()
+    },
+    tryCount
+  )
+  return _count
+}
 
-  const fiveRetries = await testRetry(5)
-  const twoFromFiveTries = await testRetry(5, 2)
+test('retryOnError should try 5 times', async () => {
+  expect(
+    await testRetry(5)
+  ).toBe(5)
+})
 
-  describe('retryOnError', function () {
-    it(
-      'should try 5 times',
-      () => assert.equal(fiveRetries, 5)
-    )
-
-    it(
-      'should return on second try from five ',
-      () => assert.equal(twoFromFiveTries, 2)
-    )
-  })
-
-  run()
-})();
+test('retryOnError should return on second try from five', async () => {
+  expect(
+    await testRetry(5, 2)
+  ).toBe(2)
+})

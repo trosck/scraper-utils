@@ -1,4 +1,3 @@
-import assert from 'assert'
 import removeDoubleSpaces from '../core/removeDoubleSpaces'
 
 const example = '      Example Domain    This domain is for use in illustrative examples in documents. You may use this    domain in literature without prior coordination or asking for permission.    More information...  '
@@ -6,6 +5,6 @@ const clearText = ' Example Domain This domain is for use in illustrative exampl
 
 describe('removeDoubleSpaces', () => {
   it('should remove double spaces', () => {
-    assert.equal(removeDoubleSpaces(example), clearText)
+    expect(removeDoubleSpaces(example)).toBe(clearText)
   })
 })

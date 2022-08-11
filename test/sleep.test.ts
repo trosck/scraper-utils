@@ -1,19 +1,11 @@
-import assert from 'assert'
 import sleep from '../core/sleep'
 
 const sleepTime = 1000
 
-;(async () => {
-
+test(`should sleep ~${sleepTime}ms`, async () => {
   const timeBefore = Date.now()
   await sleep(sleepTime)
   const timeAfter = Date.now()
 
-  describe('sleep', function () {
-    it(`should sleep ~${sleepTime}ms`, () => {
-      assert.ok(timeAfter - timeBefore - sleepTime < 10)
-    })
-  })
-
-  run()
-})();
+  expect(timeAfter - timeBefore - sleepTime).toBeLessThan(10)
+})
