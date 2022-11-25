@@ -37,7 +37,7 @@ yarn add @trosckey/scraper-utils
 ## clearHtml
 removes html tags, codes and line breaks(\n, \t, etc)
 ```javascript
-import { clearHtml } from '@trosckey/scrapper-utils'
+import { clearHtml } from '@trosckey/scraper-utils'
 clearHtml('<div>Hello, &#61;World!\n</div>') // "Hello, World!"
 ```
 
@@ -48,7 +48,7 @@ or `null` if cannot parse date
 ### parseRuDate
 parse ru date format
 ```javascript
-import { parseRuDate } from '@trosckey/scrapper-utils'
+import { parseRuDate } from '@trosckey/scraper-utils'
 parseRuDate('01 ноя 2020').toDateString() // "Sun Nov 01 2020"
 parseRuDate('28 Декабря 2016').toDateString() // "Wed Dec 28 2016"
 ```
@@ -56,7 +56,7 @@ parseRuDate('28 Декабря 2016').toDateString() // "Wed Dec 28 2016"
 ## removeDoubleSpaces
 replaces double spaces by single
 ```javascript
-import { removeDoubleSpaces } from '@trosckey/scrapper-utils'
+import { removeDoubleSpaces } from '@trosckey/scraper-utils'
 removeDoubleSpaces('Hello    ,     World    !   ') // 'Hello , World ! '
 ```
 
@@ -69,7 +69,7 @@ arguments:
 returns promise with resolving value
 
 ```javascript
-import { retryOnError } from '@trosckey/scrapper-utils'
+import { retryOnError } from '@trosckey/scraper-utils'
 const data = await retryOnError(
   async () => {
     const response = await fetch('https://example.com/')
@@ -85,14 +85,14 @@ console.log(data) // '<!doctype html><html><head>...'
 ## sleep
 simple sleep function, takes a number (milliseconds)
 ```javascript
-import { sleep } from '@trosckey/scrapper-utils'
+import { sleep } from '@trosckey/scraper-utils'
 await sleep(5000)
 ```
 
 ## sliceTextByWords
 slices text by words
 ```javascript
-import { sliceTextByWords } from '@trosckey/scrapper-utils'
+import { sliceTextByWords } from '@trosckey/scraper-utils'
 sliceTextByWords(
   `
     Lorem Ipsum: It was popularised in the 1960s
@@ -116,7 +116,7 @@ sliceTextByWords(
 ## treeSearch
 search node in tree, returns found node or `null`
 ```javascript
-import { treeSearch } from '@trosckey/scrapper-utils'
+import { treeSearch } from '@trosckey/scraper-utils'
 const tree = {
   id: 1,
   children: [
