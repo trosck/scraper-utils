@@ -27,12 +27,12 @@
     "text",
     "scraping"
   ],
-  "author": "",
+  "author": "trosckey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trosck/scrapper-utils/issues"
+    "url": "https://github.com/trosck/scraper-utils/issues"
   },
-  "homepage": "https://github.com/trosck/scrapper-utils#readme",
+  "homepage": "https://github.com/trosck/scraper-utils#readme",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "@types/node": "^18.0.0",
