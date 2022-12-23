@@ -1,9 +1,9 @@
 /**
  * retry execution function on errors
  *
- * @param {*} func 
- * @param {*} tryCount 
- * @param {*} onError 
+ * @param {Function} func 
+ * @param {Number} tryCount 
+ * @param {Function} onError 
  * @returns
  */
 export default async (
