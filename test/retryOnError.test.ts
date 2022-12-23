@@ -1,11 +1,11 @@
 import retryOnError from '../core/retryOnError'
 
-const testRetry = async (tryCount: number, limit = tryCount) => {
-  let _count = 0
+const testRetry = async (tryCount: number, limit: number | null) => {
+  let totalTriesCount = 0
   await retryOnError(
     () => {
-      _count++
-      if (_count === limit) {
+      totalTriesCount++
+      if (totalTriesCount && totalTriesCount === limit) {
         return true
       }
 
@@ -13,12 +13,12 @@ const testRetry = async (tryCount: number, limit = tryCount) => {
     },
     tryCount
   )
-  return _count
+  return totalTriesCount
 }
 
 test('retryOnError should try 5 times', async () => {
   expect(
-    await testRetry(5)
+    await testRetry(5, null)
   ).toBe(5)
 })
 
