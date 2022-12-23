@@ -11,7 +11,7 @@ const testRetry = async (tryCount: number, limit: number | null) => {
 
       throw new Error()
     },
-    tryCount
+    { retries: tryCount }
   )
   return totalTriesCount
 }
