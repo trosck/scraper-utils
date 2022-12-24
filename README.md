@@ -62,25 +62,46 @@ removeDoubleSpaces('Hello    ,     World    !   ') // 'Hello , World ! '
 ```
 
 ## retryOnError
-arguments:
-1) function for execute
-2) count of tries
-3) error handler(optional)
 
-returns promise with resolving value
+tries to execute the function until it runs out   
+of attempts (default 3). returns promise with   
+resolved value from executed function or   
+`null` if all attempts failed.   
 
-```javascript
-import { retryOnError } from '@trosckey/scraper-utils'
-const data = await retryOnError(
-  async () => {
-    const response = await fetch('https://example.com/')
-    return response.text()
-  },
-  5,
-  console.error
+```js
+retryOnError(
+  // function to execute
+  func: Function,
+  {
+    // The number of times to retry, 3 by default
+    retries?: number,
+    // executes on every error
+    onError?: ({
+      // error from executed function
+      error: Error,
+      // returns `true` if it was last try
+      isFinalTry: boolean,
+    })
+  }
 )
+```
 
-console.log(data) // '<!doctype html><html><head>...'
+example:
+```js
+import { retryOnError } from '@trosckey/scraper-utils'
+const data = await retryOnError(async () => {
+  const response = await fetch('https://example.com/')
+  return response.text()
+}, {
+  tries: 5,
+  onError: ({ error, isFinalTry }) => {
+    if (isFinalTry) {
+      console.error("Cannot download page :(", error)
+    }
+  }
+})
+
+console.log(data) // '<!doctype html><html><head>...' or null
 ```
 
 ## sleep
