@@ -1,4 +1,4 @@
-import sleep from '../core/sleep'
+import sleep from '../src/sleep'
 
 const sleepTime = 1000
 
