@@ -1,4 +1,4 @@
-import clearHtml from '../core/clearHtml'
+import clearHtml from '../src/clearHtml'
 
 const example = `
 <body>

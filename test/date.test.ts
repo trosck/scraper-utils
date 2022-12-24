@@ -1,4 +1,4 @@
-import { parseRuDate } from '../core/date'
+import { parseRuDate } from '../src/date'
 
 describe('date', () => {
   const testDate = (

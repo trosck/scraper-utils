@@ -1,4 +1,4 @@
-import treeSearch from '../core/treeSearch'
+import treeSearch from '../src/treeSearch'
 
 type TreeNodeType = {
   id: number,

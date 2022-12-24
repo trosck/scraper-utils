@@ -1,4 +1,4 @@
-import retryOnError from '../core/retryOnError'
+import retryOnError from '../src/retryOnError'
 
 const testRetry = async (tryCount: number, limit: number | null) => {
   let totalTriesCount = 0
