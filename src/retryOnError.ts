@@ -10,6 +10,8 @@
 interface Options {
   /** The number of times to retry */
   retries?: number
+  /** func if you just want to log all failed tries */
+  logError?: (error: any) => Promise<any> | any
   onError?: (
     {
       error,
@@ -25,7 +27,7 @@ interface Options {
 
 export default
   async <T>(func: Function, options?: Options): Promise<T | null> => {
-    const maxRetryCount = options?.retries || 3
+    const maxRetryCount = options?.retries ?? 3
 
     let currentTry = 0
     while (currentTry++ < maxRetryCount) {
@@ -33,6 +35,10 @@ export default
         const result = await func()
         return result as T
       } catch (error) {
+        if (options?.logError) {
+          await options.logError(error)
+        }
+
         if (options?.onError) {
           await options.onError({
             error,

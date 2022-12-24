@@ -63,10 +63,9 @@ removeDoubleSpaces('Hello    ,     World    !   ') // 'Hello , World ! '
 
 ## retryOnError
 
-tries to execute the function until it runs out   
-of attempts (default 3). returns promise with   
-resolved value from executed function or   
-`null` if all attempts failed.   
+tries to execute the function until it runs out of   
+attempts (default 3). returns promise with resolved value   
+from executed function or `null` if all attempts failed.   
 
 ```js
 retryOnError(
@@ -75,20 +74,37 @@ retryOnError(
   {
     // The number of times to retry, 3 by default
     retries?: number,
+    // func if you just want to log all failed tries
+    logError?: (error: Error) => Promise<any> | any
     // executes on every error
     onError?: ({
       // error from executed function
       error: Error,
       // returns `true` if it was last try
       isFinalTry: boolean,
-    })
+    }) => Promise<any> | any
   }
 )
 ```
 
-example:
+examples:
+
 ```js
 import { retryOnError } from '@trosckey/scraper-utils'
+
+await retryOnError(() => (
+  throw new Error("erorr >.>"),
+), {
+  tries: 2,
+  logError: console.error
+})
+
+// ...
+
+await retryOnError(() => throw new Error("erorr >.>"))
+
+// ...
+
 const data = await retryOnError(async () => {
   const response = await fetch('https://example.com/')
   return response.text()
